@@ -1,0 +1,85 @@
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GIF centrate sui video</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
+      width: 1308px;
+      height: 486px;
+    }
+    video.side-video {
+      position: absolute;
+      top: 0;
+      width: 290px;
+      height: 486px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+      z-index: 1;
+    }
+    .left-video { left: -40px; }
+    .right-video { right: -40px; }
+    img.center-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 728px;
+      height: 486px;
+      pointer-events: none;
+      user-select: none;
+      z-index: 10;
+    }
+
+    /* GIF centrate sui video, più in basso e più grandi */
+    .gif-left, .gif-right {
+      position: absolute;
+      width: 260px;  /* più grande */
+      height: auto;
+      z-index: 20;
+      top: 88%;      /* top invariato */
+      transform: translateY(-50%);
+    }
+
+    .gif-left {
+      left: -10px;  /* spostata leggermente a dx */
+    }
+
+    .gif-right {
+      right: -11px; /* spostata leggermente a sx */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Video SINISTRO -->
+    <video id="video-left" class="side-video left-video" autoplay loop muted playsinline>
+      <source src="https://djbas18.github.io/djbas/radioluna.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Video DESTRO -->
+    <video id="video-right" class="side-video right-video" autoplay loop muted playsinline>
+      <source src="https://djbas18.github.io/djbas/radioluna.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Immagine centrale -->
+    <img class="center-image" src="https://xatimg.com/image/EeBHyZAptqNU.png" alt="Immagine trasparente centro" />
+
+    <!-- GIF centrate e più basse sui video -->
+    <img class="gif-left" src="https://xatimg.com/image/KnLDtkGqJWJY.gif" alt="GIF sinistra">
+    <img class="gif-right" src="https://xatimg.com/image/KnLDtkGqJWJY.gif" alt="GIF destra">
+  </div>
+</body>
+</html>
