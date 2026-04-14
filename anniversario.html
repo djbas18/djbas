@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>DJ BAS - Layout Video + GIF</title>
+<style>
+  body {
+    margin: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    width: 1308px;
+    height: 484px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* ===== CONTENITORI ===== */
+  .box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000;
+  }
+
+  .side {
+    width: 270px;
+    height: 484px;
+  }
+
+  .center {
+    flex-grow: 1;
+    height: 484px;
+    filter: drop-shadow(0 0 25px rgba(255, 0, 0, .4));
+  }
+
+  /* ===== VIDEO MP4 ===== */
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* ===== GIF AL POSTO DEL TESTO ===== */
+  .welcome-gif {
+    position: absolute;
+    bottom: 10px; /* Posizionata in basso */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Regola la grandezza della GIF */
+    z-index: 6;
+    pointer-events: none;
+  }
+
+  /* ===== BORDI ARCOBALENO ===== */
+  .box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 4px;
+    border-radius: 20px;
+    background: conic-gradient(red, orange, yellow, lime, cyan, blue, violet, red);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 255, .7));
+    pointer-events: none;
+    z-index: 5;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="box side">
+    <video autoplay loop muted playsinline>
+      <source src="https://djbas18.github.io/djbas/anniversario2.mp4" type="video/mp4">
+    </video>
+    <img src="https://xatimg.com/image/uPP98KeX3xSe.gif" class="welcome-gif">
+  </div>
+
+  <div class="box center">
+    <video autoplay loop muted playsinline>
+      <source src="https://djbas18.github.io/djbas/modugno.mp4" type="video/mp4">
+    </video>
+    
+  </div>
+
+  <div class="box side">
+    <video autoplay loop muted playsinline>
+      <source src="https://djbas18.github.io/djbas/anniversario.mp4" type="video/mp4">
+    </video>
+    <img src="https://xatimg.com/image/D57guPjzHNvz.gif" class="welcome-gif">
+  </div>
+
+</div>
+
+</body>
+</html>
