@@ -24,7 +24,6 @@
     gap: 15px;
   }
 
-  /* ===== CONTENITORI ===== */
   .box {
     position: relative;
     overflow: hidden;
@@ -43,7 +42,6 @@
     filter: drop-shadow(0 0 25px rgba(255, 0, 0, .4));
   }
 
-  /* ===== VIDEO MP4 ===== */
   video {
     width: 100%;
     height: 100%;
@@ -51,18 +49,23 @@
     z-index: 1;
   }
 
-  /* ===== GIF AL POSTO DEL TESTO ===== */
+  /* GIF STANDARD LATERALE */
   .welcome-gif {
     position: absolute;
-    bottom: 10px; /* Posizionata in basso */
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%; /* Regola la grandezza della GIF */
+    width: 80%;
     z-index: 6;
     pointer-events: none;
   }
 
-  /* ===== BORDI ARCOBALENO ===== */
+  /* GIF CENTRALE - PIÙ GIÙ E RIMPICCIOLITA */
+  .gif-center {
+    width: 60% !important;   
+    bottom: -35px !important; /* Spostata più in basso */
+  }
+
   .box::before {
     content: "";
     position: absolute;
@@ -77,7 +80,6 @@
     pointer-events: none;
     z-index: 5;
   }
-
 </style>
 </head>
 <body>
@@ -95,7 +97,7 @@
     <video autoplay loop muted playsinline>
       <source src="https://djbas18.github.io/djbas/famiglia.mp4" type="video/mp4">
     </video>
-    <img src="https://xatimg.com/image/4Ip0mH5CUdHq.gif" class="welcome-gif">
+    <img src="https://xatimg.com/image/4Ip0mH5CUdHq.gif" class="welcome-gif gif-center">
   </div>
 
   <div class="box side">
