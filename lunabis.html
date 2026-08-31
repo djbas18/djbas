@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -13,15 +13,17 @@
     height: 100vh;
     overflow: hidden;
   }
+
   .container {
     position: relative;
     width: 1308px;
     height: 484px;
     display: flex;
     justify-content: space-between;
-    align-items: center;   /* tiene il box centrale centrato in altezza */
+    align-items: center;
     gap: 15px;
   }
+
   /* ===== CONTENITORI ===== */
   .box {
     position: relative;
@@ -29,16 +31,18 @@
     border-radius: 20px;
     background: #000;
   }
+
   .side {
     width: 270px;
     height: 484px;
   }
+
   .center {
-    width: 610px;          /* ← larghezza fissa */
-    height: 420px;         /* ← altezza fissa */
-    flex-shrink: 0;
+    flex-grow: 1;
+    height: 484px;
     filter: drop-shadow(0 0 25px rgba(255, 0, 0, .4));
   }
+
   /* ===== VIDEO MP4 ===== */
   video {
     width: 100%;
@@ -46,16 +50,18 @@
     object-fit: cover;
     z-index: 1;
   }
+
   /* ===== GIF AL POSTO DEL TESTO ===== */
   .welcome-gif {
     position: absolute;
-    bottom: 10px;
+    bottom: 10px; /* Posizionata in basso */
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 80%; /* Regola la grandezza della GIF */
     z-index: 6;
     pointer-events: none;
   }
+
   /* ===== BORDI ARCOBALENO ===== */
   .box::before {
     content: "";
@@ -71,10 +77,13 @@
     pointer-events: none;
     z-index: 5;
   }
+
 </style>
 </head>
 <body>
+
 <div class="container">
+
   <div class="box side">
     <video autoplay loop muted playsinline>
       <source src="https://djbas18.github.io/djbas/lunabis.mp4" type="video/mp4">
@@ -95,8 +104,8 @@
     </video>
     <img src="https://xatimg.com/image/hvvRV4HhAg5T.gif" class="welcome-gif">
   </div>
+
 </div>
+
 </body>
 </html>
-
-
